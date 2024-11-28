@@ -2,13 +2,6 @@
 
 Bu proje, FullStack Mastery Bootcamp'ı kapsamında geliştirilmiş bir uygulamadır. Proje, ASP.NET Core, Entity Framework, ve SQLite kullanarak basit bir film yönetim uygulaması sunmaktadır.
 
-## İçindekiler
-- [Kurulum](#kurulum)
-- [Projeyi Çalıştırma](#projeyi-çalıştırma)
-- [Teknolojiler](#teknolojiler)
-- [Katkı](#katkı)
-- [Lisans](#lisans)
-
 ## Kurulum
 
 ### Gereksinimler
