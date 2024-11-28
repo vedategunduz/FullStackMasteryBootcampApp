@@ -1,0 +1,50 @@
+@model Movie
+
+<style>
+    body {
+        background-image: url(@Model.ImageUrl);
+        background-size: contain;
+    }
+</style>
+
+<div id="GlassEffect" class="my-24 sm:w-1/2 mx-auto py-12 px-12">
+    <form asp-controller="Movies" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="MovieId" />
+
+        <div class="mb-5">
+            <label asp-for="Title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title:</label>
+            <input asp-for="Title"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="Description"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description:</label>
+            <textarea asp-for="Description"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="CategoryId"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category:</label>
+            <select asp-for="CategoryId" asp-items="ViewBag.Categories"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            </select>
+        </div>
+
+        <div class="mb-5">
+            <label for="movie_poster" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image
+                (optional):</label>
+            <input
+                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+                accept="image/*" name="ImageUrl" id="movie_poster" type="file">
+            @* @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <small class="text-white">Current image: <img src="@Model.ImageUrl" alt="Current Image" width="100"></small>
+            } *@
+        </div>
+
+        <button type="submit" class="p-2.5 bg-blue-500 text-sm font-medium text-white rounded cursor-pointer">Save
+            Changes</button>
+    </form>
+</div>

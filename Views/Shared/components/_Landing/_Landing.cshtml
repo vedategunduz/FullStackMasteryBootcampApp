@@ -1,0 +1,19 @@
+@model Movie
+
+<style>
+    body {
+        background-image: url(@Model.ImageUrl);
+    }
+</style>
+
+<section class="text-white my-24 space-y-6">
+    <h1 class="text-4xl font-bold uppercase">@Model.Title</h1>
+    <p class="w-3/5">
+        @Model.Description
+    </p>
+    <div class="space-x-2.5">
+        <button
+            class="rounded-full bg-white px-24 h-12 text-zinc-950 font-medium uppercase hover:opacity-90">play</button>
+        <button class="rounded-full border-2 border-white size-12">+</button>
+    </div>
+</section>

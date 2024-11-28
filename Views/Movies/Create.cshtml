@@ -1,0 +1,50 @@
+@model Movie
+
+<style>
+    body {
+        background-image: url("/images/hero.png");
+    }
+</style>
+
+<div id="GlassEffect" class="my-24 sm:w-1/2 mx-auto py-12 px-12">
+    <form asp-controller="Movies" asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="mb-5">
+            <label asp-for="CategoryId"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category:</label>
+            <select asp-for="CategoryId" asp-items="ViewBag.Categories"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 capitalize"></select>
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="Title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title:</label>
+            <input asp-for="Title" value="Title"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="Description"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description:</label>
+            <textarea asp-for="Description"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Write your movie description..."></textarea>
+        </div>
+
+        <div class="mb-5">
+            <label for="movie_poster"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image:</label>
+            <input
+                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+                accept="image/*" name="ImageUrl" id="movie_poster" type="file">
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="IsActive"
+                class="inline-block mb-2 text-sm font-medium dark:text-white select-none">Active:</label>
+            <input asp-for="IsActive"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2">
+        </div>
+
+        <button type="submit" class="p-2.5 bg-blue-500 text-sm font-medium text-white rounded cursor-pointer">Add
+            movie</button>
+    </form>
+</div>

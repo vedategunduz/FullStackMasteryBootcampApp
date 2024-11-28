@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Movie>;
+@{
+    var homeMovie = ViewBag.HomeMovie as Movie;
+}
+
+@if (homeMovie != null)
+{
+    @await Html.PartialAsync("Components/_Landing/_Landing", homeMovie)
+}
+
+@await Html.PartialAsync("Components/_Movies/_Movies", Model)
